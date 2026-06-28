@@ -554,6 +554,11 @@ local function main()
         -- ============================================
         toggleBtn.MouseButton1Click:Connect(function()
             isListVisible = not isListVisible
+            if isListVisible then
+                toggleBtn.Image = [[rbxassetid://131641692889955]]
+            else
+                toggleBtn.Image = [[rbxassetid://110844258094575]]
+            end
             for _, btn in ipairs(playerButtons) do
                 btn.Visible = isListVisible
             end
