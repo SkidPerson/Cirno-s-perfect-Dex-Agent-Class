@@ -116,10 +116,14 @@ local function main()
         -- IMAGE BUTTON - replica do ImageButton_4
         -- toggle que mostra/esconde a lista
         -- ============================================
+        -- Pré-carrega as duas imagens do toggle para evitar piscar
+        local ContentProvider = game:GetService("ContentProvider")
+        ContentProvider:PreloadAsync({"rbxassetid://110844258094575", "rbxassetid://131641692889955"})
+
         local toggleBtn = Instance.new("ImageButton")
         toggleBtn.Name = "ToggleBtn"
         toggleBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        toggleBtn.BackgroundTransparency = 0
+        toggleBtn.BackgroundTransparency = 1
         toggleBtn.BorderSizePixel = 0
         toggleBtn.Image = [[rbxassetid://110844258094575]]
         toggleBtn.Size = UDim2.new(0, 12, 0, 12)
